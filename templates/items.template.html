@@ -1,0 +1,18 @@
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link"  ui-sref="home" >See our List of Categories in Menu!</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" ui-sref="categories">Categories</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" ui-sref="items">Items</a>
+  </li>
+</ul>
+
+
+<ul>
+  <li ng-repeat="item in $ctrl.items">
+    {{ item.qtty }} of {{ item.name }}
+  </li>
+</ul>

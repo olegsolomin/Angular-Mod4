@@ -1,0 +1,13 @@
+<button ui-sref="home" ui-sref-active="activeState" class="btn btn-outline-primary">
+  Home
+</button>
+
+<button class="btn btn-outline-primary">
+  Categories
+</button>
+
+<ul>
+  <li ng-repeat="item in ctrl.categories_list">
+       {{ item.short_name }} = {{ item.name }}
+  </li>
+</ul>

@@ -7,7 +7,7 @@ angular.module('MenuApp')
 RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 function RoutesConfig($stateProvider, $urlRouterProvider) {
 
-  // Redirect to tab 1 if no other URL matches
+  // Redirect to HOME if no other URL matches
   $urlRouterProvider.otherwise('/');
 
   // Set up UI states
@@ -15,30 +15,30 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   //Home Page
     .state('home', {
       url: '/',
-      templateUrl: 'templates/home.html'
-    });
-
-    // .state('categories', {
-    //   url: '/menu-list/{category}',
-    //   templateUrl: 'templates/categories.html',
-    //   controller: 'CategoriesController as categories',
-    //   resolve: {
-    //   items: ['MenuDataService', function (MenuDataService) {
-    //   return MenuDataService.getAllCategories();
-    //   }]
-    //   }
-    // })
-    //
-    // .state('items', {
+      templateUrl: 'templates/home.template.html'
+    })
+   // Category Page
+    .state('categoriesList', {
+      url: '/categories-list',
+      templateUrl: 'templates/categories.template.html',
+      controller: 'CategoriesController as ctrl',
+      resolve: {
+      items: ['MenuDataService', function (MenuDataService) {
+      return MenuDataService.getAllCategories();
+      }]
+      }
+    })
+    // Item detail page
+    .state('items', {
     //   url: '/item-detail/{itemId}',
-    //   templateUrl: 'templates/items.html',
+    templateUrl: 'templates/items.template.html',
     //   controller: 'ItemsController as items' ,
     //   resolve: {
     //   items: ['MenuDataService', function (MenuDataService) {
     //   return MenuDataService.getItemsForCategory();
     //   }]
     //   }
-    // });
+    });
 }
 
 })();

@@ -19,7 +19,7 @@ function MenuDataService(getAllCategories, getItemsForCategory) {
                 method: "GET",
                 url:  (ApiBasePath + "categories.json")
             });
-            return response.data;
+            return response;
 
         }
     };
@@ -33,7 +33,7 @@ function MenuDataService(getAllCategories, getItemsForCategory) {
                 method: "GET",
                 url:  (ApiBasePath + 'menu_items.json?category=' + categoryShortName)
             });
-            return response.data;
+            return response;
 
         }
     }
