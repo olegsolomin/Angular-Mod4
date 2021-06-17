@@ -24,11 +24,11 @@ angular.module('data')
         }
     };
 
-    getItemsForCategory.$inject =['$http'];
-    function getItemsForCategory($http) {
+    getItemsForCategory.$inject =['$http','categoryShortName'];
+    function getItemsForCategory($http, categoryShortName) {
         var service = this;
 
-        service.getItemsForCategory = function (category) {
+        service.getItemsForCategory = function (categoryShortName) {
             var response = $http({
                 method: "GET",
                 url:  (ApiBasePath + 'menu_items.json?category=' + categoryShortName)

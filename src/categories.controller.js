@@ -15,8 +15,8 @@ angular.module('MenuApp')
 // }
 
 //proper way
-CategoriesController.$inject = ['MenuDataService','items'];
-function CategoriesController(MenuDataService,items) {
+//CategoriesController.$inject = ['items'];
+function CategoriesController(items) {
 var ctrl = this;
 ctrl.categories_list = items.data;
 }

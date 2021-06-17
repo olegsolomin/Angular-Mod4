@@ -1,18 +1,22 @@
-<ul class="nav nav-pills">
-  <li class="nav-item">
-    <a class="nav-link"  ui-sref="home" >See our List of Categories in Menu!</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" ui-sref="categories">Categories</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" ui-sref="items">Items</a>
-  </li>
-</ul>
+<div id="menu">
 
+<button ui-sref="home" ui-sref-active="activeState" class="btn btn-outline-primary">
+  Home
+</button>
+
+<button ui-sref="categories" class="btn btn-outline-primary">
+  Categories
+</button>
+
+<button class="btn btn-outline-primary">
+  Category
+</button>
 
 <ul>
-  <li ng-repeat="item in $ctrl.items">
-    {{ item.qtty }} of {{ item.name }}
+  <li ng-repeat="item in itctrl.items_list">
+       {{ item.short_name }} {{ item.name }} {{ item.description }}
   </li>
 </ul>
+
+
+</div>
