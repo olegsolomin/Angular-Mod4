@@ -6,9 +6,9 @@ angular.module('data')
 .constant('ApiBasePath', 'https://davids-restaurant.herokuapp.com/')
 
 
-MenuDataService.$inject = ['getAllCategories', 'getItemsForCategory']
-function MenuDataService(getAllCategories, getItemsForCategory) {
-  var service = this;
+// MenuDataService.$inject = ['getAllCategories', 'getItemsForCategory']
+// function MenuDataService(getAllCategories, getItemsForCategory) {
+//   var service = this;
 
     MenuDataService.$inject =['$http', 'ApiBasePath'];
     function MenuDataService($http, ApiBasePath) {
@@ -37,5 +37,5 @@ function MenuDataService(getAllCategories, getItemsForCategory) {
 
         }
     }
-}
+
 })();
