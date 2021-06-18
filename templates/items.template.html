@@ -1,6 +1,6 @@
 <div id="menu">
-
-<button ui-sref="home" ui-sref-active="activeState" class="btn btn-outline-primary">
+<button ui-sref="home"
+ui-sref-active="activeState" class="btn btn-outline-primary">
   Home
 </button>
 
@@ -11,13 +11,18 @@
 <button class="btn btn-outline-primary">
   {{itctrl.cat_detail.name}}
 </button>
+<blockquote>
+<p>
+    {{itctrl.cat_detail.special_instructions}}
+</p>
+</blockquote>
 
 <!-- <ul>
   <li ng-repeat="item in itctrl.items_list">
        {{ item.short_name }} {{ item.name }} {{ item.description }}
   </li>
 </ul> -->
-<table>
+<table class="table table-hover table-condensed">
 <tr ng-repeat="item in itctrl.items_list">
     <td style="background-color:#337ab7; border:5px solid white; text-align:center; color: white">
         {{ item.short_name}}
@@ -28,5 +33,4 @@
     <td>{{item.description}}</td>
 </tr>
 </table>
-
 </div>
