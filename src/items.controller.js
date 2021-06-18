@@ -8,6 +8,7 @@ ItemsController.$inject = ['menu_items']
 function ItemsController(menu_items) {
 var itctrl = this;
 itctrl.items_list = menu_items.data.menu_items;
+itctrl.cat_detail = menu_items.data.category;
 }
 
 })();
