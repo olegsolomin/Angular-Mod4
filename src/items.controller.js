@@ -4,9 +4,10 @@
 angular.module('MenuApp')
 .controller('ItemsController', ItemsController);
 
-function ItemsController(menu_items) {
+ItemsController.$inject = ['itemParam'];
+function ItemsController(itemParam) {
 var itctrl = this;
-itctrl.items_list = menu_items.data.menu_items;
+itctrl.items_list = itemParam.data.menu_items;
 }
 
 })();

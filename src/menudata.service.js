@@ -6,10 +6,6 @@ angular.module('data')
 .constant('ApiBasePath', 'https://davids-restaurant.herokuapp.com/')
 
 
-// MenuDataService.$inject = ['getAllCategories', 'getItemsForCategory']
-// function MenuDataService(getAllCategories, getItemsForCategory) {
-//   var service = this;
-
     MenuDataService.$inject =['$http', 'ApiBasePath'];
     function MenuDataService($http, ApiBasePath) {
         var service = this;
@@ -21,12 +17,7 @@ angular.module('data')
             });
             return response;
 
-        }
     };
-
-    getItemsForCategory.$inject =['$http','categoryShortName'];
-    function getItemsForCategory($http, categoryShortName) {
-        var service = this;
 
         service.getItemsForCategory = function (categoryShortName) {
             var response = $http({
@@ -34,7 +25,6 @@ angular.module('data')
                 url:  (ApiBasePath + 'menu_items.json?category=' + categoryShortName)
             });
             return response;
-
         }
     }
 
