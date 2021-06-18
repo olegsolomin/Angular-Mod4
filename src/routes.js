@@ -36,10 +36,10 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
       resolve: {
       menu_items: ['$stateParams', 'MenuDataService',
             function ($stateParams, MenuDataService) {
-              return MenuDataService.getItemsForCategory()
-                .then(function (items) {
-                   return items[$stateParams.categoryShortName];
-                });
+              return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
+      //          .then(function (items) {
+      //             return items[$stateParams.categoryShortName];
+      //          });
             }]
       }
     });
