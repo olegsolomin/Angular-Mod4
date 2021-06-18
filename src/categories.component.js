@@ -5,7 +5,7 @@ angular.module('MenuApp')
 .component('categoriesList', {
   templateUrl: 'templates/categories.template.html',
   bindings: {
-    items: '<'
+    categories: '<'
   }
 });
 

@@ -20,7 +20,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
    // Category Page
     .state('categoriesList', {
       url: '/categories-list',
-      templateUrl: 'templates/categories.template.html',
+      templateUrl: 'templates/categories.list.template.html',
       controller: 'CategoriesController as ctrl',
       resolve: {
         items: ['MenuDataService', function (MenuDataService) {
@@ -31,15 +31,12 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     // Item detail page
     .state('items', {
       url: '/items/{categoryShortName}',
-      templateUrl: 'templates/items.template.html',
+      templateUrl: 'templates/items.list.template.html',
       controller: 'ItemsController as itctrl' ,
       resolve: {
       menu_items: ['$stateParams', 'MenuDataService',
             function ($stateParams, MenuDataService) {
               return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
-      //          .then(function (items) {
-      //             return items[$stateParams.categoryShortName];
-      //          });
             }]
       }
     });
